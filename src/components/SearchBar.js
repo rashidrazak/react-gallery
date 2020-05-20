@@ -3,7 +3,7 @@ import React from 'react'
 class SearchBar extends React.Component {
   state = { term: '' }
 
-  onFormSubmit(event) {
+  onFormSubmit = (event) => {
     // Prevent the default behaviour of a form i.e. submit whenever ENTER is pressed
     event.preventDefault()
     console.log(this.state.term)
@@ -26,6 +26,10 @@ class SearchBar extends React.Component {
    * onInputChange(event) {
    *   this.setState({ term: event.target.value })
    * }
+   * 
+   * OR
+   * 
+   * Just convert onInputChange function into an arrow function
    */
   render() {
     return (
