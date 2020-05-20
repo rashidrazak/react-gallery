@@ -3,6 +3,12 @@ import React from 'react'
 class SearchBar extends React.Component {
   state = { term: '' }
 
+  onFormSubmit(event) {
+    // Prevent the default behaviour of a form i.e. submit whenever ENTER is pressed
+    event.preventDefault()
+    console.log(this.state.term)
+  }
+
   /**
    * NOTE:
    * 
@@ -24,7 +30,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="ui segment">
-        <form className="ui form">
+        <form className="ui form" onSubmit={this.onFormSubmit}>
           <div className="field">
             <label>Image Search</label>
             <input 
