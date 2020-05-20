@@ -6,7 +6,13 @@ class SearchBar extends React.Component {
   onFormSubmit = (event) => {
     // Prevent the default behaviour of a form i.e. submit whenever ENTER is pressed
     event.preventDefault()
-    console.log(this.state.term)
+
+    /**
+     * This is how we access props inside a class based component.
+     * In this case, we're invoking callback function passed down from
+     * parent component i.e. App component.
+     */
+    this.props.onSearch(this.state.term)
   }
 
   /**
