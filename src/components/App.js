@@ -29,7 +29,7 @@ class App extends React.Component {
         <SearchBar onSearch={this.onSearchSubmit.bind(this)} />
         <p>Found: {this.state.images.length} images</p>
         <div>
-          <ImageList />
+          <ImageList images={this.state.images} />
         </div>
       </div>
     )
